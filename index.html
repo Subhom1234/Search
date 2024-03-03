@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images (2) (4).jpeg');
+        }
+      #img{
+        
+        color: white;
+        padding-bottom: 50px;
+        font-size: 30px;
+        
+      }
+        input{
+          margin: 5px;
+          
+        }
+        #searchContainer {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #searchForm {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #searchQuery {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            
+        }
+
+        #clearButton {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+         font-size: 24px;
+          
+        }
+
+        #clearButton:hover {
+            color: red;
+        }
+        button{
+          background-color: transparent;
+          margin-right: 10px;
+          font-size: 20px;
+          border: none;
+          
+        }
+    </style>
+</head>
+<body>
+
+    <div id="searchContainer">
+      <div id="img">
+       <b> Super Search 🔍</b>
+      
+      </div>
+        <form id="searchForm" onsubmit="searchGoogle(); return false;">
+            <input type="text" id="searchQuery" placeholder="Search Google..." required>
+            <button type="submit">🔍</button>
+            <button id="clearButton" onclick="clearInput()" title="Clear Input">&#10006;</button>
+        </form>
+    </div>
+
+    <script>
+        function searchGoogle() {
+            const query = document.getElementById('searchQuery').value;
+            const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.location.href = googleSearchUrl;
+        }
+
+        function clearInput() {
+            document.getElementById('searchQuery').value = '';
+        }
+    </script>
+
+</body>
+</html>
